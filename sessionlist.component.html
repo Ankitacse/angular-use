@@ -1,0 +1,67 @@
+<main class="wrapper">
+<div class="sessionlist-wrap">
+  <div class="sessionlist-row">
+      <button type="button" (click)="onPrev()" [disabled]="is_prev_disable" class="button-prev">
+          <i class="material-icons">keyboard_arrow_left</i>
+      </button>
+      <button type="button" (click)="onNext()" [disabled]="is_next_disable" class="button-next">
+        <i class="material-icons">keyboard_arrow_right</i>
+      </button>
+      <div class="session-card-col" *ngFor ="let st of sessionList2;">
+        <mat-card class="card-bg">
+            <div class="card-top-row">
+              <div class="mat-h-fleft">
+                <mat-card-title class="card-title">{{st.username}}</mat-card-title>
+                <mat-card-subtitle class="card-type">Type: Incall</mat-card-subtitle>
+              </div>
+              <div class="mat-h-fright">
+                  <button type="button" (click)="not_confirm()"mat-stroked-button class="mat-warn-btn">Not Confirmed</button>
+              </div>
+            </div>
+            <mat-card-content>
+              <div class="session-day-time">
+                <div class="session-d-t-list">
+                  <label>Session Day:</label>
+                  <span>{{st.day}}</span>
+                </div>
+                <div class="session-d-t-list">
+                  <label>Session Time:</label>
+                  <span>{{st.time}}</span>
+                </div>
+                <div class="session-location">
+                    <mat-icon matPrefix class="login-icon"> room </mat-icon>
+                    <span class="location-name">{{st.location}}</span>
+                </div>
+              </div>
+              <div class="session-paid-time">
+                <ul>
+                  <li>
+                    <span>Total Paid</span>
+                    <span class="total-list">{{st.totalpaid}}</span>
+                  </li>
+                  <li>
+                      <span>Session Time</span>
+                      <span class="total-list">{{st.duration}}</span>
+                    </li>
+                </ul>
+              <div class="clearfix"></div>
+              </div>
+            </mat-card-content>
+            <mat-card-actions class="session-card-bottom">
+                <button type="button" (click)="accept()" mat-raised-button class="accept-btn">Accept</button>
+                <button type="button" (click)="reject()" mat-stroked-button class="mat-warn-btn m-left-15">Reject</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+  
+    <br>
+    <!--will have to delete-->
+    
+    <!--will hav to delete-->
+    
+    <div *ngIf="empty">No Data Found</div>
+   <div class="clearfix"></div> 
+  </div>
+  <mat-spinner style="text-align:center; margin:100px auto;" *ngIf="showLoader"></mat-spinner>
+</div>
+</main>

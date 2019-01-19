@@ -1,0 +1,151 @@
+@import "./src/assets/scss/_mixin.scss";
+@import "./src/assets/scss/variable.scss";
+.sessionlist-row{
+  margin-left: 40px;
+  margin-right: 40px;
+  position: relative;
+}
+.button-prev, .button-next{
+  background: #d6e4e6;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  i{
+    font-size: 25px;
+    line-height: 40px;
+    color: #000;
+  }
+}
+.button-prev, .button-next::disable{
+  background: #d6e4e6;
+}
+.button-prev{
+  left: -20px;
+}
+.button-next{
+  right: -20px;
+}
+.session-card-col{
+  width: 50%;
+  float: left;
+  padding: 0 40px;
+}
+.card-bg{
+  background: $greybg;
+  padding: 30px;
+}
+.card-top-row{
+  display: flex;
+  border-bottom: 1px solid $greycolor;
+}
+.mat-h-fleft{
+  width: 100%;
+}
+.card-title{
+  color: $primary;
+  font-weight: 400;
+}
+.card-type{
+  font-size: 16px;
+  font-weight: 400;
+  color: #839092;
+}
+.mat-h-fright{
+  margin-top: 8px;
+}
+.mat-warn-btn{
+  @include warn-btn;
+  &:hover{
+    background-color: $warncolor;
+    color: $white;
+  }
+}
+.session-day-time{
+  padding: 25px 0;
+  border-bottom: 1px solid $greycolor;
+  .session-d-t-list{
+  margin-bottom: 18px;
+    label{
+      font-size: 18px;
+      line-height: 1.2;
+      color: #839092;
+      font-weight: 400;
+      min-width: 138px;
+      display: inline-block;
+    }
+    span{
+      display: inline-block;
+      font-size: 18px;
+      line-height: 1.2;
+      font-weight: 400;
+      color: #0f292d;
+    }
+  }
+  .session-location{
+    mat-icon{
+      color: #797979;
+      vertical-align: middle;
+      font-size: 21px;
+      margin-right: 3px;
+    }
+    .location-name{
+      font-size: 16px;
+      line-height: 1.2;
+      color: #839092;
+      font-weight: 400;
+    }
+  }
+}
+.session-paid-time{
+  padding: 25px 0;
+  border-bottom: 1px solid $greycolor;
+  ul{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    li{
+      width: 50%;
+      float: left;
+      text-align: center;
+      padding: 15px 0;
+      border-left: 1px solid $greycolor;
+      &:first-child{
+        border-left: none;
+      }
+      span{
+        display: block;
+        font-size: 18px;
+        line-height: 1.2;
+        font-weight: 400;
+        color: #839092;
+      }
+      .total-list{
+        font-weight: 500;
+        color: #0f292d;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+.session-card-bottom{
+  text-align: center;
+  padding-top: 10px;
+  button{
+    min-width: 145px;
+    display: inline-block;
+    box-shadow: none;
+  }
+  .accept-btn{
+    background-color: $primary;
+    border: 1px solid #28a6c5 ;
+    color: $white;
+  }
+  .m-left-15{
+    margin-left: 15px;
+  }
+}
