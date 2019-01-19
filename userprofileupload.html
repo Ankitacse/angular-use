@@ -1,0 +1,10 @@
+ 
+ /*write this in your html component */
+ <img [src]="url" >
+<div class="sidebar-img-change">
+    <input type="file"  accept="image/*"  style="display:none" (change)="onSelectFile($event)" #fileInput>
+    <button type="button" (click)="fileInput.click()" #result>
+      <i class="material-icons">edit</i>
+    </button>
+  </div>
+  
