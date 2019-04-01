@@ -1,0 +1,22 @@
+ //in app component.html
+  <label> {{myDate | date:'dd.MM.yyyy HH:mm:ss'}} </label>
+  
+  //in appcomponent .ts
+  export classappComponent implements OnInit {
+ 
+    myDate: Date;
+
+    constructor() {}
+
+    ngOnInit(): void {
+        this.utcTime();
+    }
+
+    utcTime(): void {
+       setInterval(() => {         
+        this.myDate = new Date();
+        console.log(this.myDate); // just testing if it is working
+      }, 1000);
+    }
+}
+//and here u go :)
