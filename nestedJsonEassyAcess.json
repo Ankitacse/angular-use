@@ -1,0 +1,171 @@
+{"tree_data":[{
+    "organization_id": 1,
+    "organization_name": "Sinfosy",
+    "sub_org": [
+        {
+            "sub_organization_id": 1,
+            "sub_organization_name": "Factory1",
+            "sub_group": [
+                {
+                    "node_id": 1,
+                    "node_name": "Habc1",
+                    "isActive":0,
+                    "file": " ",
+                    "measures": "",
+                    "system_view": "",
+                    "urgent_information": "",
+                    "sub_node": []
+
+                }
+            ],
+            "isActive":0,
+            "file": " ",
+            "measures": "",
+            "system_view": "",
+            "urgent_information": ""
+        },
+        {
+            "sub_organization_id": 2,
+            "sub_organization_name": "Factory2",
+            "sub_group": [
+                {
+                    "node_id": 1,
+                    "node_name": "Habc.1",
+                    "file": " ",
+                    "measures": "",
+                    "system_view": "",
+                    "urgent_information": "",
+                    "sub_node": [],
+                    "isActive":1
+                },
+                {
+                    "node_id": 2,
+                    "node_name": "Habc.2",
+                    "isActive":1,
+                    "file": " ",
+                    "measures": "",
+                    "system_view": "",
+                    "urgent_information": "",
+                    "sub_node": [
+                        {
+                            "sub_node_id": 1,
+                            "sub_node_name": "Mabc4",
+                            "isActive":0,
+                            "file": " ",
+                            "measures": "",
+                            "system_view": "",
+                            "urgent_information": ""
+                        },
+                        {
+                            "sub_node_id": 2,
+                            "sub_node_name": "Mabc5005",
+                            "isActive":0,
+                            "file": " ",
+                            "measures": "",
+                            "system_view": "",
+                            "urgent_information": ""
+                        },
+                        {
+                            "sub_node_id": 3,
+                            "sub_node_name": "Mabc4053",
+                            "isActive":1,
+                            "file": " ",
+                            "measures": "",
+                            "system_view": "",
+                            "urgent_information": ""
+                        }
+                    ]
+                }
+            ],
+            "isActive":1,
+            "file": " ",
+            "measures": "",
+            "system_view": "",
+            "urgent_information": ""
+        },
+        {
+            "sub_organization_id": 3,
+            "sub_organozation_name": "Factory3",
+            "sub_group": [],
+            "isActive":1,
+            "file": " ",
+            "measures": "",
+            "system_view": "",
+            "urgent_information": ""
+        },
+        {
+            "sub_organization_id": 4,
+            "sub_organozation_name": "Factory4",
+            "sub_group": [
+                {
+                    "node_id": 1,
+                    "node_name": "Hxyz.1",
+                    "isActive":1,
+                    "file": " ",
+                    "measures": "",
+                    "system_view": "",
+                    "urgent_information": "",
+                    "sub_node": []
+                },
+                {
+                    "node_id": 2,
+                    "node_name": "Hxyz.2",
+                    "isActive":1,
+                    "file": " ",
+                    "measures": "",
+                    "system_view": "",
+                    "urgent_information": "",
+                    "sub_node": []
+                },
+                {
+                    "node_id": 3,
+                    "node_name": "Hxyz.3",
+                    "isActive":0,
+                    "file": " ",
+                    "measures": "",
+                    "system_view": "",
+                    "urgent_information": "",
+                    "sub_node": [
+                        {
+                            "sub_node_id": 1,
+                            "sub_node_name": "Mxyz43",
+                            "isActive":0,
+                            "file": " ",
+                            "measures": "",
+                            "system_view": "",
+                            "urgent_information": ""
+                        },
+                        {
+                            "sub_node_id": 2,
+                            "sub_node_name": "Mxyza4300",
+                            "isActive":0,
+                            "file": " ",
+                            "measures": "",
+                            "system_view": "",
+                            "urgent_information": ""
+                        },
+                        {
+                            "sub_node_id": 3,
+                            "sub_node_name": "Mxyz4563",
+                            "isActive":0,
+                            "file": " ",
+                            "measures": "",
+                            "system_view": "",
+                            "urgent_information": ""
+                        }
+                    ]
+                }
+            ],
+            "isActive":1,
+            "file": " ",
+            "measures": "",
+            "system_view": "",
+            "urgent_information": ""
+        }
+    ],
+    "isActive":1,
+    "file": " ",
+    "measures": "",
+    "system_view": "",
+    "urgent_information": ""
+}]}
