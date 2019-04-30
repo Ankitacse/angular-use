@@ -1,0 +1,28 @@
+ <div class="node-tree">
+      <div class="node-tree-content">
+        <div class="node-tree-content-header"  *ngFor="let n of nodeTree">
+          <h3>{{n.organization_name}}</h3>
+        </div>
+        <div class="node-tree-content-detail" *ngFor="let n of nodeTree">
+        <ul>
+          <li  *ngFor="let subOrg of n.sub_org">
+            {{subOrg.sub_organization_name}}
+               <ul>
+                 <li  *ngFor="let subGroup of subOrg.sub_group">
+                    {{subGroup.node_name}}
+                    <ul>
+                      <li *ngFor="let subNode of subGroup.sub_node">
+                        {{subNode.sub_node_name}}
+                      </li>
+                    </ul>
+                 </li>
+               </ul>
+          </li>
+        </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
