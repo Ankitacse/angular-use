@@ -1,0 +1,42 @@
+//make json
+"test" :{[
+ {
+   'A': {
+     'B': [{
+       'C': {
+         'D': [{
+           'content': 'content_test1',
+           'writedt': '2017-02-08 00:00:00',
+           'writerid': 'writerid_test1'
+          }, {
+           'content': 'content_test2',
+           'writedt': '2017-02-08 00:00:00',
+           'writerid': 'writerid_test1'
+          }, {
+            'content': 'content_test3',
+            'writedt': '2017-02-08 00:00:00',
+            'writerid': 'writerid_test2'
+         },  {
+           'content': 'content_test4',
+           'writedt': '2017-02-08 00:00:00',
+           'writerid': 'writerid_test2'
+         }]
+       }
+     }]
+   }
+ }
+];}
+
+
+//make interface
+//make service 
+//make html
+ <div *ngFor="let test of tests">
+    <div *ngFor="let x of test.A.B">
+      <div *ngFor="let y of x.C.D; let i = index"> <h4>Content {{i+1}}</h4>
+        {{y.content}}
+        {{y.writedt | date}}
+        {{y.writerid}}
+      </div>
+    </div>
+  </div>
