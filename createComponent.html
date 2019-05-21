@@ -1,0 +1,32 @@
+<section class="createIssueTaskWrap">
+  <!--main content start-->
+  <form [formGroup]="createIssueForm" (ngSubmit)="createIssueFormLog()">
+  
+        <!--formRowStart-->
+		  <!--function we put here for speech-->
+            <input type="text" placeholder="enter task title" value="{{speechInput}}" formControlName="cIssueTaskTitle">
+            <span class="micIcon" (click)="getSpeech()">
+              <img src="/assets/images/create_task_images/mic.svg">
+            </span>
+        <!--formRowEnd-->
+        <!--formRowStart-->
+		<!--- use recording for another input field but both are not interlink for
+		that make two diffrent function and just call or subscribe service or function from service.ts and by interpolation we can use data to display-->
+        <div class="createIssue_formRow">
+          <div class="createIssue_formColumnText">
+            <label>Description :</label>
+          </div>
+          <div class="createIssue_formColumnInput">
+            <textarea id="inputWideBox" placeholder="Describe the task" value="{{speechInputA}}"formControlName="cIssueTaskDescription"></textarea>
+            <span class="micIcon" (click)="getSpeechA()">
+              <img src="/assets/images/create_task_images/mic.svg">
+            </span>
+          </div>
+        </div>
+        <!--formRowEnd-->
+     
+  <!--main content end-->
+
+
+</form>
+</section>
