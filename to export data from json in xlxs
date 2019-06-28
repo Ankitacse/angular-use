@@ -1,0 +1,56 @@
+/* in ts file*/
+import { MatTableDataSource } from '@angular/material/table';
+import * as XLSX from 'xlsx';
+import { ViewChild, ElementRef } from '@angular/core';
+
+export class TaskListViewComponent implements OnInit {
+
+  dataSource = new TaskDataSource(this.taskService);
+   @ViewChild('TABLE', { static: true }) table: ElementRef;
+  //for selection of row multiple
+  tasks: Task[] = [];
+  selection = new SelectionModel<TaskDataSource>(true, []);
+  displayedColumns =
+    ['select', 'status', 'measure_type', 'file',
+      'chat', 'reporter', 'arrow', 'responsible', 'dueDate', 'more'];
+
+constructor(private taskService: TaskService) {}
+ exportTOExcel() {
+ // use TABLE and #table in html too//
+    const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(this.table.nativeElement);
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+    /* save to file */
+    XLSX.writeFile(wb, 'SheetJS.xlsx');
+  }
+  }
+  
+  //html section declare button with function to export and add TABLE and #table to tigger also use <tr mat row at last>
+  
+  [<div class="taskTable table-data-wrap"  #TABLE>
+  <table mat-table [dataSource]="dataSource" class="table-data-wrap-main" #table>
+  <!--container for row 1abc any -->
+  <ng-container matColumnDef="status" sticky>
+      <mat-header-cell *matHeaderCellDef class="xyz"> heading any </mat-header-cell>
+      <mat-cell *matCellDef="let task;let i = index ;">
+        <div (click)="taskStatusDialog(task, i)">
+          <div class="progress-circle  progress-{{task.status}}" [ngClass]="getColours(task.due_dt)"></div>
+        </div>
+      </mat-cell>
+    </ng-container>
+     <ng-container matColumnDef="status">
+      <mat-header-cell *matHeaderCellDef class="xyz"> heading any </mat-header-cell>
+      <mat-cell *matCellDef="let task;let i = index ;">
+        <div (click)="taskStatusDialog(task, i)">
+          <div class="progress-circle  progress-{{task.status}}" [ngClass]="getColours(task.due_dt)"></div>
+        </div>
+      </mat-cell>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)"></tr>
+  </table>
+  </div>
+  <button mat-raised-button color="primary" (click)="exportTOExcel()">Export as Excel</button>
+  
+  ]
+  
