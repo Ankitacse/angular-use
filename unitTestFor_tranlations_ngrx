@@ -1,0 +1,30 @@
+we have to add these three things
+
+step1) 
+//for translate
+  let translate: TranslateService;
+  let injector: Injector;
+  
+  step 2)
+   beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ CreateNewTaskComponent ],
+      schemas: [NO_ERRORS_SCHEMA],
+      imports: [ReactiveFormsModule,
+         RouterTestingModule, 
+          // /to test translate****
+        TranslateModule.forRoot(),
+         MaterialModule,HttpClientTestingModule],
+    })
+    .compileComponents();
+  }));
+  
+  step 3
+    beforeEach(() => {
+    fixture = TestBed.createComponent(CreateNewTaskComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+     //to test translate*********
+     injector = getTestBed();
+     translate = injector.get(TranslateService);
+  });
