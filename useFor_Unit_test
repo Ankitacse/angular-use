@@ -1,0 +1,66 @@
+Error: StaticInjectorError(DynamicTestModule)[HttpClient]: 
+  StaticInjectorError(Platform: core)[HttpClient]: 
+    NullInjectorError: No provider for HttpClient!
+	
+	
+	solutuion:-
+	import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import {HttpClientModule} from '@angular/common/http';
+import { myService } from './myservice';
+
+
+describe('myService', () => {
+
+      beforeEach(() => TestBed.configureTestingModule({
+        imports: [HttpClientTestingModule], 
+        providers: [myService]
+      }));
+
+       it('should be created', () => {
+        const service: myService = TestBed.get(myService);
+        expect(service).toBeTruthy();
+       });
+
+       it('should have getData function', () => {
+        const service: myService = TestBed.get(myService);
+        expect(service.getData).toBeTruthy();
+       });
+
+    });
+********************************************************************************************************
+ beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ CreateNewTaskComponent ],
+      schemas: [NO_ERRORS_SCHEMA],
+      imports: [ReactiveFormsModule,
+         RouterTestingModule, 
+         MaterialModule,HttpClientTestingModule],
+    })
+	
+	*********************************************************************************************************
+	Q) coustom schema error
+	
+	solution:
+	a) adding schemas: [ CUSTOM_ELEMENTS_SCHEMA ] to every component or
+
+b) 
+
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+and
+
+schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+],
+to your module.
+********************************************************************************************************************
+q)MAT DIALOG
+SOLUTION:
+ imports: [ReactiveFormsModule,
+        RouterTestingModule,
+        MaterialModule, HttpClientTestingModule],
+      providers: [
+        { provide: MAT_DIALOG_DATA, useValue: {} },
+        { provide: MatDialogRef, useValue: {} }
+      ]
+Cheers, Raphael
